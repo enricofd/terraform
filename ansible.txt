@@ -1,0 +1,2 @@
+Ubuntu wsl:
+ansible-playbook first_playbook.yml

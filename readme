@@ -1,3 +1,11 @@
-Ler: https://adamtheautomator.com/terraform-vpc
+## RUN
 
-https://blog.impulso.network/como-criar-e-gerenciar-ambientes-eks-com-terraform-na-aws/
+**Terraform**
+
+terraform init
+terraform plan
+terraform apply
+
+**Ansible**
+
+ansible-playbook eks-playbook.yml

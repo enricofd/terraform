@@ -1,0 +1,13 @@
+- name: Kubectl Playbook
+  connection: ansible.netcommon.network_cli
+  gather_facts: false
+  hosts: localhost
+  tasks:
+    - name: Update kubeconfig
+      command: aws eks --region us-east-1 update-kubeconfig --name main
+    - name: Create deployment
+      command: kubectl create deployment name  --image=enricofd/fastapi-app
+    - name: Escale deployment
+      command: kubectl autoscale deployment application --min=2 --max=5 --cpu-percent=80
+    - name: Expose deployment
+      command: kubectl expose deployment.apps/application --type=LoadBalancer --port=80
